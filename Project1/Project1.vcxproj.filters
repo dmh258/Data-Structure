@@ -15,18 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Factorial.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Fibonacci.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Main.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="exec_in_main.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="algorithm.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="exec_in_main.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
