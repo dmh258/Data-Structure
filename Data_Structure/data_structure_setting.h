@@ -14,19 +14,19 @@ typedef struct _node {
 } Node;
 
 // 연결 리스트 구조체 정의
-typedef struct _linkedList {
+typedef struct _List {
     Node* head;
     Node* cur;
     Node* before;
     int numOfData;
-} LinkedList;
+} List;
 
 // 위에부터 리스트 초기화, 데이터 삽입, 첫 번째 데이터 참조, 다음 데이터 참조, 데이터 삭제, 저장된 데이터 수 반환 함수
-void ListInit(LinkedList* plist);
-void LInsert(LinkedList* plist, LData pdata);
-int LFirst(LinkedList* plist, LData* pdata);
-int LNext(LinkedList* plist, LData* pdata);
-LData LRemove(LinkedList* plist);
-int LCount(LinkedList* plist);
+void ListInit(List* plist);
+void LInsert(List* plist, LData pdata);
+int LFirst(List* plist, LData* pdata);
+int LNext(List* plist, LData* pdata);
+LData LRemove(List* plist);
+int LCount(List* plist);
 
 #endif
