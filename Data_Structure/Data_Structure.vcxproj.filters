@@ -15,21 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algorithm_main.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="exec_in_main.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="algorithm.c">
+    <ClCompile Include="data_structure_main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="algorithm.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="exec_in_main.h">
+    <ClInclude Include="data_structure_setting.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
