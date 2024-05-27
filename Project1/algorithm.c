@@ -4,21 +4,6 @@
 
 int* Fibo_array;
 
-int Fibo_main() {
-	int Fibo_num;
-	int result;
-
-	printf("Enter Fibonacci num : ");
-	scanf_s("%d", &Fibo_num);
-
-	Make_Fibo_Array(Fibo_num);
-	init_Fibo_Array(Fibo_num);
-	result = Exec_Fibo(Fibo_num);
-
-	printf("Fibo %d = %d\n\n", Fibo_num, result + 1);
-
-	return 0;
-}
 /*
 int Exec_Fibo(int Fibo_num) {
 	int fun_fibo_num;
@@ -36,10 +21,10 @@ int Exec_Fibo(int Fibo_num) {
 */
 
 void Make_Fibo_Array(int array_size) {
-	*Fibo_array = (int *)malloc(sizeof(int) * array_size);
+	Fibo_array = (int *)malloc(sizeof(int) * array_size);
 }
 
-void init_Fibo_Array(int init_array_size) {
+void Init_Fibo_Array(int init_array_size) {
 	int fun_init_array_size;
 	int i;
 
@@ -51,6 +36,7 @@ void init_Fibo_Array(int init_array_size) {
 }
 
 int Exec_Fibo(int Fibo_num) {
+	
 	int fun_fibo_num;
 	int fun_result;
 
@@ -58,13 +44,31 @@ int Exec_Fibo(int Fibo_num) {
 
 	if (Fibo_array[fun_fibo_num] > 0)
 		return Fibo_array[fun_fibo_num];
-	if (fun_fibo_num < 2)
-		return Fibo_array[fun_fibo_num];
+	if (fun_fibo_num < 0)
+		return 0;
+	else if (fun_fibo_num < 2)
+		return 1;
 	else {
 		fun_result = Exec_Fibo(fun_fibo_num - 1) + Exec_Fibo(fun_fibo_num - 2);
-		Fibo_array = fun_result;
+		Fibo_array[fun_fibo_num] = fun_result;
 		return fun_result;
 	}
+}
+
+int Fibo_main() {
+	int Fibo_num;
+	int result;
+
+	printf("Enter Fibonacci num : ");
+	scanf_s("%d", &Fibo_num);
+
+	Make_Fibo_Array(Fibo_num);
+	Init_Fibo_Array(Fibo_num);
+	result = Exec_Fibo(Fibo_num);
+
+	printf("Fibo %d = %d\n\n", Fibo_num, result);
+
+	return 0;
 }
 
 
