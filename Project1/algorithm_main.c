@@ -1,5 +1,5 @@
 #include "algorithm.h"
-#include "exec_in_main.h"
+#include "exec_in_algorithm_main.h"
 
 int main() {
 	output_statement();
