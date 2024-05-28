@@ -2,6 +2,7 @@
 #include "data_structure_setting.h"
 #include "data_structure_setting.c"
 
+
 int main() {
 
 	List list;

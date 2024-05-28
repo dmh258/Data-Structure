@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include "data_structure_setting.h"
-
+#include<stsdio.h>
 
 // 리스트 초기화 함수
 void ListInit(List* plist) {
