@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "data_structure_setting.h"
-#include "data_structure_setting.c"
+#include "list_setting.h"
 
 
 int main() {
