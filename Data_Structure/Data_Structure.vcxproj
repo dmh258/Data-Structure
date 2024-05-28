@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="data_structure_main.c" />
+    <ClCompile Include="exec_in_data_structure_main.c" />
     <ClCompile Include="list_setting.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="exec_in_data_structure_main.h" />
     <ClInclude Include="list_setting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
