@@ -1,5 +1,12 @@
 #pragma once
 
-void exec_ordinary_list();
+////////////////////default 실행 함수//////////////////
 void output_statement();
 void select_fun_at_main();
+//////////////////기본 리스트 실행 함수////////////////
+
+void exec_ordinary_list();
+
+////////////////////배열 리스트 실행 함수//////////////////
+
+void exec_array_list();

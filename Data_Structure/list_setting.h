@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+
+///////////////////////////// 기본 리스트 정의 /////////////////////////////
+
 #ifndef LIST_H
 #define LIST_H
 
@@ -30,3 +33,38 @@ LData LRemove(List* plist);// 데이터 삭제 함수
 int LCount(List* plist);// 저장된 데이터 수 반환 함수
 
 #endif
+
+///////////////////////////// 기본 리스트 정의 /////////////////////////////
+
+
+///////////////////////////// 배열 리스트 정의 /////////////////////////////
+
+#ifndef __ARRAY_LIST_H__
+#define __ARRAY_LIST_H__
+
+#define TRUE 1
+#define FALSE 0
+
+#define LIST_LEN 100
+typedef int LData;
+
+typedef struct _ArrayList {
+    LData arr[LIST_LEN];    // 리스트 저장소 배열
+    int numOfData;          // 저장된 데이터 수
+    int curPosition;        // 데이터 참조 위치
+} ArrayList;
+
+typedef ArrayList list;
+
+void ListInit(List* plist);             // 초기화
+void LInsert(List* plist, LData data);  // 데이터 저장
+
+int LFirst(List* plist, LData* pdata);  // 첫 데이터 참조
+int LNext(List* plist, LData* pdata);   // 두 번째 이후 데이터 참조
+
+LData LRemove(List* plist);     // 참조한 데이터 삭제
+int LCount(List* plist);        // 저장된 데이터 수 반환
+
+#endif
+
+///////////////////////////// 배열 리스트 정의 /////////////////////////////
