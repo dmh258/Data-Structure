@@ -73,6 +73,60 @@ int LCount(List* plist) {
 
 //////////////////////////////////// 배열 리스트 구현 함수 ////////////////////////////////////////
 
+void Arr_ListInit(arr_list* plist) {
+	(plist->numOfData) = 0;
+	(plist->curPosition) = FALSE;
+}
 
+void Arr_LInsert(arr_list* plist, arr_data data) {
+	if (plist->numOfData >= LIST_LEN) // 더이상 저장이 불가능할 때
+		printf("리스트의 최대 저장 가능 횟수에 도달했습니다.\n");
+
+	//여기 아래는 저장이 가능할 때 실행
+	plist->arr[plist->numOfData] = data;
+	(plist->numOfData)++;
+}
+
+int Arr_LFirst(arr_list* plist, arr_data* pdata) {
+
+	if (plist->numOfData == 0)
+		return FALSE;
+
+	(plist->curPosition) = 0;
+	*pdata = plist->arr[0];
+
+	return TRUE;
+}
+
+int Arr_LNext(arr_list* plist, arr_data* pdata) {
+	if (plist->curPosition >= (plist->numOfData) - 1)
+		return 0;
+
+	(plist->curPosition)++;
+	*pdata = plist->arr[plist -> curPosition];
+	
+	return TRUE;
+}
+
+LData Arr_LRemove(arr_list* plist) {
+
+	int rpos = plist->curPosition;
+	int num = plist->numOfData;
+	int i;
+	LData rdata = plist->arr[rpos];
+
+	for (i = rpos; i < num - 1; i++) {
+		plist->arr[i] = plist->arr[i + 1];
+	}
+
+	(plist->numOfData)--;
+	(plist->curPosition)--;
+
+	return rdata;
+}
+
+int Arr_LCount(arr_list* plist) {
+	return plist->numOfData;
+}
 
 //////////////////////////////////// 기본 리스트 구현 함수 ////////////////////////////////////////
