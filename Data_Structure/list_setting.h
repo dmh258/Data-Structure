@@ -68,3 +68,22 @@ int Arr_LCount(arr_list* plist);        // 저장된 데이터 수 반환
 #endif
 
 ///////////////////////////// 배열 리스트 정의 /////////////////////////////
+
+///////////////////////////// 구조체 리스트 정의 /////////////////////////////
+
+#ifndef __POINT_H__
+#define __POINT_H__
+
+typedef struct _point {
+    int xpos;
+    int ypos;
+} Point;
+
+void SetPointPos(Point* ppos, int xpos, int ypos); // Point 변수의 xpos, ypos 값 설정
+void ShowPointPos(Point* ppos); //Point 변수의 xpos, ypos 정보 출력
+
+int PointComp(Point* pos1, Point* pos);
+
+#endif
+
+///////////////////////////// 구조체 리스트 정의 /////////////////////////////
