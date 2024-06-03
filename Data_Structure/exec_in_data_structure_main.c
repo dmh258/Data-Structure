@@ -48,12 +48,63 @@ void exec_ordinary_list() {
 	printf("\n\n");
 }
 
+//////////////////////////////////// 기본 리스트 실행 함수 ////////////////////////////////////////
+
+//////////////////////////////////// 배열 리스트 실행 함수 ////////////////////////////////////////
+
+void exec_array_list() {
+	ArrayList list;
+	int data;
+	Arr_ListInit(&list);
+
+	Arr_LInsert(&list, 11);	Arr_LInsert(&list, 11);
+	Arr_LInsert(&list, 22);	Arr_LInsert(&list, 22);
+	Arr_LInsert(&list, 33);
+
+	printf("현재 데이터 수 : %d \n", Arr_LCount(&list));
+
+	if (Arr_LFirst(&list, &data)) {
+		printf("%d ", data);
+		printf("this was LFirst\n");
+
+		while (Arr_LNext(&list, &data))
+			printf("%d ", data);
+	}
+	printf("\n\n");
+
+	if (Arr_LFirst(&list, &data))
+	{
+		if (data == 22)
+			Arr_LRemove(&list);
+
+		while (Arr_LNext(&list, &data))
+		{
+			if (data == 22)
+				Arr_LRemove(&list);
+		}
+	}
+
+	printf("현재 데이터의 수 : %d \n", Arr_LCount(&list));
+
+	if (Arr_LFirst(&list, &data))
+	{
+		printf("%d ", data);
+
+		while (Arr_LNext(&list, &data))
+			printf("%d ", data);
+	}
+
+	printf("\n\n");
+}
+//////////////////////////////////// 배열 리스트 실행 함수 ////////////////////////////////////////
+
+
 void output_statement() {
 
 	printf("Welcome to my algorithm & data_structure program \n");
 	printf("Here is a list you can choose \n\n");
 	printf("1. ordinary_list\n");
-//	printf("2. Factorial\n");
+	printf("2. array_list\n");
 //	printf("3. Hanoi Tower\n");
 	printf("\n\n");
 }
@@ -76,9 +127,9 @@ void select_fun_at_main() {
 			  break;
 		case 1: exec_ordinary_list();
 			break;
-/*		case 2: Factorial_main();
+		case 2: exec_array_list();
 			break;
-		case 3: Hanoi_main();
+			/*		case 3: Hanoi_main();
 			break;
 */		default: printf("You Enter a wrong number \n");
 			break;
@@ -90,10 +141,3 @@ void select_fun_at_main() {
 }
 
 //////////////////////////////////// 기본 리스트 실행 함수 ////////////////////////////////////////
-
-
-//////////////////////////////////// 배열 리스트 실행 함수 ////////////////////////////////////////
-
-void exec_array_list() {
-}
-//////////////////////////////////// 배열 리스트 실행 함수 ////////////////////////////////////////
