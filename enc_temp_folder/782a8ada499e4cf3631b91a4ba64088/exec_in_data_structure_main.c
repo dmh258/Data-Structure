@@ -149,9 +149,9 @@ void exec_point_list() {
 			if (PointComp(ppos, &compPos) == 1) {
 				ppos = LRemove(&list);
 				printf("ppos = %d\n", ppos);
-				printf("ppos.xpos = %d\n", ppos->xpos); //이 부분이 안됨
+				printf("ppos.xpos = %d\n", ppos->xpos);
 				printf("ppos.ypos = %d\n", ppos->ypos);
-				free(ppos); //여기까지 안됨
+				free(ppos);
 			}
 		}
 	}
