@@ -130,6 +130,7 @@ int Arr_LCount(arr_list* plist) {
 	return plist->numOfData;
 }
 
+
 //////////////////////////////////// 배열 리스트 구현 함수 ////////////////////////////////////////
 
 //////////////////////////////////// 구조체 리스트 구현 함수 ////////////////////////////////////////
@@ -147,8 +148,22 @@ int ReturnPointYpos(Point* ppos) {
 	return ppos->ypos;
 }
 
-int PointComp(Point* pos1, Point* pos2) {
+void ShowPointPos(Point* ppos) {
+	printf("xpos = %d, ypos = %d\n", ppos->xpos, ppos->ypos);
+}
+
+double PointDistance(Point* pos1, Point* pos2) {
 	return sqrt((pos1->xpos - pos2->xpos) ^ 2 - (pos1->ypos - pos2->ypos) ^ 2);
+}
+
+int PointComp(Point* pos1, Point* pos2) {
+	if (pos1 -> xpos == pos2->xpos && pos1->ypos == pos2->ypos)
+		return 0;
+	else if (pos1->xpos == pos2->xpos)
+		return 1;
+	else if (pos1->ypos == pos2->ypos)
+		return 2;
+	else return -1;
 }
 
 //////////////////////////////////// 구조체 리스트 구현 함수 ////////////////////////////////////////

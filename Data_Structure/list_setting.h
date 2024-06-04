@@ -79,11 +79,16 @@ typedef struct _point {
     int ypos;
 } Point;
 
+typedef Point* Ldata;
+
 void SetPointPos(Point* ppos, int xpos, int ypos); // Point 변수의 xpos, ypos 값 설정
 int ReturnPointXpos(Point* ppos); //Point 변수의 xpos 반환
 int ReturnPointYpos(Point* ppos); //Point 변수의 ypos 반환
+void ShowPointPos(Point* ppos);
 
-int PointComp(Point* pos1, Point* pos2); // 두 Point 거리 계산
+double PointDistance(Point* pos1, Point* pos2);  // 두 Point 거리 계산
+int PointComp(Point* pos1, Point* pos2);
+
 
 #endif
 

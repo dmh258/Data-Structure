@@ -98,6 +98,82 @@ void exec_array_list() {
 }
 //////////////////////////////////// 배열 리스트 실행 함수 ////////////////////////////////////////
 
+//////////////////////////////////// 구조체 리스트 실행 함수 ////////////////////////////////////////
+
+void exec_point_list() {
+
+	List list;
+	Point compPos;
+	Point* ppos;
+
+	ListInit(&list);
+
+	ppos = (Point*)malloc(sizeof(Point));
+	SetPointPos(ppos, 2, 1);
+	LInsert(&list, ppos);
+
+	ppos = (Point*)malloc(sizeof(Point));
+	SetPointPos(ppos, 2, 2);
+	LInsert(&list, ppos);
+
+	ppos = (Point*)malloc(sizeof(Point));
+	SetPointPos(ppos, 3, 1);
+	LInsert(&list, ppos);
+
+	ppos = (Point*)malloc(sizeof(Point));
+	SetPointPos(ppos, 3, 2);
+	LInsert(&list, ppos);
+
+	printf("현재 데이터 수 : %d\n", LCount(&list));
+
+	if (LFirst(&list, &ppos)) {
+		ShowPointPos(ppos);
+
+		while (LNext(&list, &ppos)) {
+			ShowPointPos(ppos);
+		}
+	}
+
+	printf("\n");
+
+	compPos.xpos = 2;
+	compPos.ypos = 0;
+
+	if (LFirst(&list, &ppos)){
+		if (PointComp(ppos, &compPos) == 1) {
+			ppos = LRemove(&list);
+			free(ppos);
+		}
+
+		while (LNext(&list, &ppos)) {
+			if (PointComp(ppos, &compPos) == 1) {
+				ppos = LRemove(&list);
+				printf("ppos = %d\n", ppos);
+				printf("ppos.xpos = %d\n", ppos->xpos);
+				printf("ppos.ypos = %d\n", ppos->ypos);
+				free(ppos);
+			}
+		}
+	}
+
+	printf("현재 데이터 수 : %d \n", LCount(&list));
+
+	if (LFirst(&list, &ppos)) {
+		ShowPointPos(ppos);
+
+		while (LNext(&list, &ppos))
+			ShowPointPos(ppos);
+	}
+
+	printf("\n");
+
+	return 0;
+}
+
+//////////////////////////////////// 구조체 리스트 실행 함수 ////////////////////////////////////////
+
+
+//////////////////////////////////// 메인 실행 함수 ////////////////////////////////////////
 
 void output_statement() {
 
@@ -105,7 +181,7 @@ void output_statement() {
 	printf("Here is a list you can choose \n\n");
 	printf("1. ordinary_list\n");
 	printf("2. array_list\n");
-//	printf("3. Hanoi Tower\n");
+	printf("3. point_list\n");
 	printf("\n\n");
 }
 
@@ -129,9 +205,9 @@ void select_fun_at_main() {
 			break;
 		case 2: exec_array_list();
 			break;
-			/*		case 3: Hanoi_main();
+		case 3: exec_point_list();
 			break;
-*/		default: printf("You Enter a wrong number \n");
+		default: printf("You Enter a wrong number \n");
 			break;
 		}
 
@@ -140,4 +216,4 @@ void select_fun_at_main() {
 	}
 }
 
-//////////////////////////////////// 기본 리스트 실행 함수 ////////////////////////////////////////
+//////////////////////////////////// 메인 실행 함수 ////////////////////////////////////////
