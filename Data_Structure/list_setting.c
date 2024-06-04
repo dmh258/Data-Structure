@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 #include"list_setting.h"
 
 //////////////////////////////////// 기본 리스트 구현 함수 ////////////////////////////////////////
@@ -129,4 +130,25 @@ int Arr_LCount(arr_list* plist) {
 	return plist->numOfData;
 }
 
-//////////////////////////////////// 기본 리스트 구현 함수 ////////////////////////////////////////
+//////////////////////////////////// 배열 리스트 구현 함수 ////////////////////////////////////////
+
+//////////////////////////////////// 구조체 리스트 구현 함수 ////////////////////////////////////////
+
+void SetPointPos(Point* ppos, int xpos, int ypos) {
+	ppos->xpos = xpos;
+	ppos->ypos = ypos;
+}
+
+int ReturnPointXpos(Point* ppos) {
+	return ppos->xpos;
+}
+
+int ReturnPointYpos(Point* ppos) {
+	return ppos->ypos;
+}
+
+int PointComp(Point* pos1, Point* pos2) {
+	return sqrt((pos1->xpos - pos2->xpos) ^ 2 - (pos1->ypos - pos2->ypos) ^ 2);
+}
+
+//////////////////////////////////// 구조체 리스트 구현 함수 ////////////////////////////////////////
